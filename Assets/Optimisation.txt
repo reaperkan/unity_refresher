@@ -1,0 +1,33 @@
+-> Avoid Unnecessary calls and operations in methods that are called every
+    frame i.e Update.
+
+-> Use sqrMagnitude instead of magnitude because square operations are costly.
+    (target.position - transform.position).sqrMagnitude < minDistance * minDistance
+
+-> Bounds check object intersection can be crudely checked whther their Collider,
+    Renderer bounds intersect or not. Bounds structure has handy Intersects method.
+    Works well for convex and not for concave.
+
+-> Splitting long running routines over multiple frames (power of Coroutines)
+
+-> Perform Expensives Operations less frequently and cache the values
+
+
+COMMON PITFALLS
+
+-> String operations can build up garbage, its better to use constant strings
+   or string literals as they are inserted directly into the stack. 
+
+-> Use Conditional Attribute to debug messages so that it doesn't end up in production
+    [System.Diagnostics.Conditional("UNITY_EDITOR")] will make the function run only in 
+    Editor.
+
+-> Compare strings using binary so that its faster
+    strA.equals(strB, System.StringComparison.Ordinal)
+    string.IsNullOrEmpty(strA)
+    Dictionary<string,int> mydic = new Dictionary<string,int>(System.StringComparer.Ordinal)
+
+
+-> Cache References 
+-> Avoiding calling methods using strings
+-> Avoid Empty Unity Methods

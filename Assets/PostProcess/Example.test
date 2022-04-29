@@ -1,0 +1,6 @@
+{
+    "someValue":123,
+    "someOtherValue":456.297,
+    "someBoolValue": true,
+    "someStringvalue": "This is test"
+}
